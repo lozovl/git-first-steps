@@ -1,6 +1,6 @@
 # Обо мне
 
-[Фото](http://pixeljoint.com/pixels/images/awards/contest4.gif)
+[Фото](http://pixeljoint.com/files/icons/full/candymanpjchallenge1.png)
 
 *:D*
 **>:(**
