@@ -1,3 +1,4 @@
+[About Us](about-us.md)
 # Инструкция по GIT и Linux командам
 
 ## Работа с Linux
