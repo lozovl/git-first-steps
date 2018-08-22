@@ -2,8 +2,10 @@ h1 {text-align: center;}
 
 thead {background-color: black; color: white;}
 
-button {width: 40px; height: 40px; outline: inset thin;}
+button {width: 40px; height: 40px; outline: inset thin; background-color: white;}
 
 input {text-align: right; width: 165px;}
 
-table {outline-style: outset}
+table {outline-style: outset;}
+
+tfoot {width: 160px;}
