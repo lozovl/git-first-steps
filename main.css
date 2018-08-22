@@ -2,5 +2,8 @@ h1 {text-align: center;}
 
 thead {background-color: black; color: white;}
 
-button {width: 40px; height: 40px;}
+button {width: 40px; height: 40px; outline: inset thin;}
 
+input {text-align: right; width: 165px;}
+
+table {outline-style: outset}
