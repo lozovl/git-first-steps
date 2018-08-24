@@ -65,3 +65,10 @@ const dispatchOperation = (operation) => {
     input.value = num;
     p = true;
 };
+
+const equals = document.getElementById('equals');
+equals.onclick = () => {
+    num = num + parseFloat(input.value);
+    input.value = num;
+    num = null
+};
