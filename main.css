@@ -8,6 +8,10 @@ thead {background-color: black; color: white;}
 
 .last-button {width: 86px; height: 40px; outline: inset thin; background-color: white;}
 
+.dot-button {width: 40px; height: 40px; outline: inset thin; background-color: white;}
+
+.backspace-button {width: 40px; height: 40px; outline: inset thin; background-color: white;}
+
 input {text-align: right; width: 165px;}
 
 table {outline-style: outset;}

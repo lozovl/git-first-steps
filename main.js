@@ -1,9 +1,9 @@
 let num = null;
-let op = null;
+let p = false;
 
 const numButtons = document.getElementsByClassName('num-button');
 
-for (var i = 0; i < numButtons.length; i++) {
+for (let i = 0; i < numButtons.length; i++) {
     const button = numButtons[i];
     const num = button.textContent;
     button.onclick = () => {
@@ -26,7 +26,8 @@ dot.onclick = () => {
 const backspace = document.getElementById('backspace');
 backspace.onclick = () => {
     if (input.value.length === 1) {
-        input.value = '0'
+        input.value = '0';
+        num = null
     } else {
         input.value = input.value.slice(0, -1)
     }
@@ -34,25 +35,33 @@ backspace.onclick = () => {
 
 const clear = document.getElementById('clear');
 clear.onclick = () => {
-    input.value = input.value.slice(-1, 0)
-    input.value = '0'
+    input.value = input.value.slice(-1, 0);
+    input.value = '0';
+    num = null
 };
 
+const operationButtons = document.getElementsByClassName('operation-button');
+[].forEach.call(operationButtons, (button) => {
+    button.onclick = () => {
+        dispatchOperation(button.textContent);
+    }
+});
+
 enterNumber = (n) => {
-    if (n === '+') {
-        if (num == null) {
-            op = '+';
-            console.log('+');
-        }
-        return
-    }
-    if (op == null) {
-        num = input.value;
-        input.value = n;
-    }
     if (input.value === '0') {
         input.value = n;
     } else {
-        input.value = input.value + n;
+        if (p) {
+            input.value = n;
+            p = false;
+        } else {
+            input.value = input.value + n;
+        }
     }
+};
+
+const dispatchOperation = (operation) => {
+    num = num + parseFloat(input.value);
+    input.value = num;
+    p = true;
 };
