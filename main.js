@@ -1,5 +1,6 @@
 let num = null;
 let p = false;
+let lop = null;
 
 const numButtons = document.getElementsByClassName('num-button');
 
@@ -52,6 +53,7 @@ enterNumber = (n) => {
         input.value = n;
     } else {
         if (p) {
+            num = parseFloat(input.value);
             input.value = n;
             p = false;
         } else {
@@ -61,14 +63,25 @@ enterNumber = (n) => {
 };
 
 const dispatchOperation = (operation) => {
-    num = num + parseFloat(input.value);
-    input.value = num;
+    if (lop) {
+        if (!p) {
+            num = processOperation(lop, num, parseFloat(input.value));
+            input.value = num;
+        }
+    }
     p = true;
+    lop = operation
 };
 
-const equals = document.getElementById('equals');
-equals.onclick = () => {
-    num = num + parseFloat(input.value);
-    input.value = num;
-    num = null
+const processOperation = (operation, argument1, argument2) => {
+    switch (operation) {
+        case '+':
+            return argument1 + argument2;
+        case '-':
+            return argument1 - argument2;
+        case '×':
+            return argument1 * argument2;
+        case '÷':
+            return argument1 / argument2;
+    }
 };
